@@ -1,0 +1,116 @@
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  background-color: #000;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen;
+}
+
+.chat-background {
+  height: calc(100vh - 58px - 60px);
+  overflow-y: auto;
+  padding: 12px 8px 100px;
+  box-sizing: border-box;
+}
+
+.message {
+  max-width: 75%;
+  padding: 10px 14px;
+  margin: 6px 0;
+  font-size: 16px;
+  position: relative;
+  word-wrap: break-word;
+  line-height: 1.4;
+}
+
+.message.sent {
+  margin-left: auto;
+  background: #0a84ff;
+  color: #fff;
+  border-radius: 20px 20px 4px 20px;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 95% 100%, 0 100%);
+}
+
+.message.received {
+  margin-right: auto;
+  background: #3a3a3c;
+  color: #fff;
+  border-radius: 20px 20px 20px 4px;
+  clip-path: polygon(5% 100%, 0 85%, 0 0, 100% 0, 100% 100%);
+}
+
+.message.swiped {
+  transform: translateX(-60px);
+  transition: transform 0.2s ease;
+}
+
+.timestamp {
+  position: absolute;
+  right: -80px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  color: #aaa;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.status-wrapper {
+  font-size: 11px;
+  color: #aaa;
+  margin-top: 4px;
+  text-align: right;
+}
+
+.composer-bar {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background: #1c1c1e;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.text-input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 20px;
+  margin: 0 10px;
+  border: none;
+  background: #2c2c2e;
+  color: white;
+  font-size: 16px;
+}
+
+.plus-icon, .mic-icon {
+  font-size: 20px;
+  color: white;
+}
+
+.editor-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px;
+  background: #121212;
+  position: sticky;
+  top: 58px;
+  z-index: 1001;
+  border-bottom: 1px solid #2c2c2e;
+}
+
+.editor-container input,
+.editor-container select,
+.editor-container button {
+  font-size: 14px;
+  border-radius: 12px;
+  padding: 6px 10px;
+  border: none;
+  outline: none;
+  background-color: #e0e0e0;
+  color: #000;
+}
